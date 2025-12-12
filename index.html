@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Персональний сайт — виконано завдання з HTML та CSS. Валідація пройдена." />
+  <title>Персональний сайт — Відмінно</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">Мій Сайт</a>
+      <nav class="main-nav" aria-label="Головна навігація">
+        <a href="#about">Про мене</a>
+        <a href="#work">Роботи</a>
+        <a href="#contacts">Контакти</a>
+      </nav>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu">Мenu</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container">
+        <h1>Вітаю! Це демонстраційний сайт для залікового завдання</h1>
+        <p>Сучасний, адаптивний та валідний HTML5 + CSS3. Мета — відмінна оцінка.</p>
+        <p><a class="cta" href="#work">Переглянути роботи</a></p>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h2>Про мене</h2>
+      <p>Я — студент/ка, який/яка вивчає HTML та CSS. Цей сайт показує знання: семантичну розмітку, адаптивний дизайн, доступність та валідацію коду.</p>
+      <ul class="skills">
+        <li>Семантичний HTML</li>
+        <li>CSS Grid та Flexbox</li>
+        <li>Адаптивний дизайн</li>
+        <li>WCAG-наступні практики</li>
+      </ul>
+    </section>
+
+    <section id="work" class="container work">
+      <h2>Роботи</h2>
+      <div class="grid">
+        <article class="card">
+          <img src="images/project1.png" alt="Знімок роботи 1" width="600" height="340">
+          <h3>Проект A</h3>
+          <p>Опис проекту A — коротко та інформативно.</p>
+        </article>
+        <article class="card">
+          <img src="images/project2.png" alt="Знімок роботи 2" width="600" height="340">
+          <h3>Проект B</h3>
+          <p>Опис проекту B — адаптивний макет.</p>
+        </article>
+        <article class="card">
+          <img src="images/project3.png" alt="Знімок роботи 3" width="600" height="340">
+          <h3>Проект C</h3>
+          <p>Опис проекту C — CSS-анімації та переходи.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacts" class="container contacts">
+      <h2>Контакти</h2>
+      <p>Залиште повідомлення:</p>
+      <form action="#" method="post" novalidate>
+        <label for="name">Ім'я</label>
+        <input id="name" name="name" type="text" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="message">Повідомлення</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Надіслати</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Мій Сайт — Всі права захищені.</p>
+      <p class="small">HTML та CSS валідні за стандартами W3C.</p>
+    </div>
+  </footer>
+
+<script>
+  // Мала скрипт-підстановка року і проста логіка меню
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.main-nav');
+  toggle.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    nav.classList.toggle('open');
+  });
+</script>
+</body>
+</html>
